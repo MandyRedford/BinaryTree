@@ -10,14 +10,13 @@ import javax.swing.*;
 
 public class Driver {
 
-	LinkedList<String> ll = new LinkedList<String>();	
+	static LinkedList<String> ll = new LinkedList<String>();	
 
 	static JFrame open = new JFrame ("Races for next meet");
 		
 	static JPanel p1 = new JPanel();
 	static JButton badd = new JButton("Add");
 	static JButton bdelete = new JButton("Delete");
-	static JButton bsearch = new JButton("Search");
 
 	public static void main(String[] args) { 
 		
@@ -35,22 +34,13 @@ public class Driver {
 
 	public void actionPerformed(ActionEvent e){
 			open.dispose();
-			new add();
+			add.works(ll);
 			
 							}
 							});
 			
 			bdelete.addActionListener(new ActionListener(){
 				
-
-	public void actionPerformed(ActionEvent e){
-			open.dispose();
-			new delete();
-							
-											}
-											});
-							
-			bsearch.addActionListener(new ActionListener(){
 
 	public void actionPerformed(ActionEvent e){
 			open.dispose();
@@ -61,9 +51,8 @@ public class Driver {
 						 
 			p1.add(badd);
 			p1.add(bdelete);
-			p1.add(bsearch);
 					
-			open.add(p1, BorderLayout.CENTER);
+			open.add(p1, BorderLayout.SOUTH);
 							}		 
 
 		
